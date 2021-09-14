@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PetsList from "./components/PetsList";
 import Home from "./pages/Home";
 import "./styles.css";
 
@@ -49,7 +50,8 @@ export default function App() {
   console.log("Inside State: ", pets);
   return (
     <>
-      <Home pets={pets} />
+      <Home />
+      <PetsList pets={pets} />
     </>
   );
 }
