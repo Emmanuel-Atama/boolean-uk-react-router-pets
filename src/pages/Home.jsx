@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function (props) {
+export default function () {
   return (
     <main>
       <div className="App Main-header">
@@ -14,10 +14,15 @@ export default function (props) {
         <ul></ul>
         <li>
           <Link to="pets">Our Pets</Link>
-          {/* {props.pets.map((pet, index) => {
-            console.log("Inside Pets Map: ", pet);
-            return <></>;
-          })} */}
+        </li>
+        <li>
+          <Link to="/types/dog">Dog</Link>
+        </li>
+        <li>
+          <Link to="/types/cat">Cat</Link>
+        </li>
+        <li>
+          <Link to="/">Back</Link>
         </li>
       </section>
     </main>

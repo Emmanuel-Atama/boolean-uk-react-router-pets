@@ -34,3 +34,11 @@ li {
   list-style-type: none;
   padding: 0;
 }
+.Pet-Button {
+  background-color: lightblue;
+  font-size: 12px;
+  padding: 8px;
+  color: rgb(21, 28, 68);
+  border: 1px dotted rgb(83, 82, 82);
+  border-radius: 25px;
+}

@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import PetsList from "./components/PetsList";
+import PetView from "./components/PetView";
 import Home from "./pages/Home";
 import "./styles.css";
 
@@ -47,11 +49,28 @@ const initialPets = [
 ];
 export default function App() {
   const [pets, setPets] = useState(initialPets);
-  console.log("Inside State: ", pets);
+  const [buttons, setButtons] = useState();
+
+  console.log("Inside State: ", { pets });
   return (
     <>
       <Home />
-      <PetsList pets={pets} />
+      {/* <PetsList pets={pets} /> */}
+      {/* <PetView pets={pets} /> */}
+      <Switch>
+        <Route exact path="/pets">
+          <PetsList pets={pets} />
+        </Route>
+        <Route exact path="/pets/:petName">
+          <PetView pets={pets} />
+        </Route>
+        <Route exact path="/types/:petType">
+          <PetsList pets={pets} />
+        </Route>
+        <Route exact path="/pets/types/:petType">
+          <PetsList pets={pets} />
+        </Route>
+      </Switch>
     </>
   );
 }
